@@ -7,22 +7,27 @@ As a part of the recruitment process we ask you to complete a practical developm
 
 ## "solve" — what does that mean?
 
-We suggest that you fork the repo to your personal Github profile and show off the solution. You are also free to present this in another manner (ie. a slide deck or a document) if you choose to do so.
+We suggest that you fork the repo to your personal Github profile and show off the solution. However, if you want to download the code and create your solution in another environment (ie. CodePen, CodeSandbox etc.) that is also acceptable.
 
 Your solution is the foundation of our talk, not something that we do a technical review of — think of this as a session where we ask _why_ you've chosen the approach you have, and where we have a frank and open conversation.
 
 ## What's the task?
 
-Imagine that we're in a hiring process, and the applicant has to fill out some personal details. The person we're looking for has to live in Europe and be fluent in English.
+Imagine that we're in a hiring process, and the applicant has to fill out some personal details. The person we're looking for:
+
+- lives in Europe
+- is fluent in English
+- can start within the next 90 days
 
 We've created a very, very basic HTML form and some CSS and JavaScript for styling and functionality. (The pre-filled values and feedback messages are only there for the sake of example, so that you don't have to "invent" these.)
 
-Your task is to take this and convert it into a React application that validates the user input and provides a feedback response (success or failure).
+Your task is to take this and convert it into a React/Typescript application that validates the user input and provides a feedback response (success or failure).
 
 ## Focus areas
 
 As we're looking for someone to work in a design system team, your core focus should be on:
 
+- component structure
 - scalability and developer experience
 - accessibility and usability
 - code quality
