@@ -1,45 +1,73 @@
-# Senior UI Engineer
+# React + TypeScript + Vite
 
-As a part of the recruitment process we ask you to complete a practical development challenge. The challenge consists of two parts:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-1. You solve the provided task.
-2. We host a session where you present your solution to us, and we all have a nice talk about it.
+Currently, two official plugins are available:
 
-## "solve" — what does that mean?
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-We suggest that you fork the repo to your personal Github profile and show off the solution. However, if you want to download the code and create your solution in another environment (ie. CodePen, CodeSandbox etc.) that is also acceptable.
+## React Compiler
 
-Your solution is the foundation of our talk, not something that we do a technical review of — think of this as a session where we ask _why_ you've chosen the approach you have, and where we have a frank and open conversation.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## What's the task?
+## Expanding the ESLint configuration
 
-Imagine that we're in a hiring process, and the applicant has to fill out some personal details. The person we're looking for:
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- lives in Europe
-- is fluent in English
-- can start within the next 90 days
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-We've created a very, very basic HTML form and some CSS and JavaScript for styling and functionality. (The pre-filled values and feedback messages are only there for the sake of example, so that you don't have to "invent" these.)
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-Your task is to take this and convert it into a React/Typescript application that validates the user input and provides a feedback response (success or failure).
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## Focus areas
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-As we're looking for someone to work in a design system team, your core focus should be on:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-- component structure
-- scalability and developer experience
-- accessibility and usability
-- code quality
-
-This also means that not only are you free to question design decisions, it's something we expect you to do.
-
-## Expectations
-
-We expect you to use no more than three hours on this task, and we know that it will probably be a stretch to get done on time, but that's by design — we want you to focus on what _you_ think is the most important part, and then spend some time thinking about whatever is left.
-
-Also, please send us a link to your solution two days in advance of the interview, so that we have time to look it over and prepare questions.
-
-## Questions
-
-If you have any questions or concerns please simply ask.
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
