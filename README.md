@@ -29,25 +29,25 @@ Comparing the provided solution to the task, my initial thought is to scope the 
 
 There's something off- with the provided solution. It's trying to do too much, without providing the right guidance. Why should a person sign up, if they don't meet the requirements? At what stage are we in, in the hiring process? *Having just read Shape Up, I'm inspired by the idea of a scope hammer:
 
-Some of the UI elements are irrelevant in the scenario of a finding an English speaking applicant who lives in Europe and can start within the next 90 days. For a more streamlined solution, I would remove the following elements:
+Some of the UI elements are irrelevant in the scenario of a finding an English speaking applicant who lives in Europe and can start within the next 90 days. For a more streamlined solution within scope, I would discard the following elements:
 
-> Password input: There is no indication of the applicant creating a profile.
-> Massive dropdown: We are only interested in applicants living in Europe.
-> Language checkboxes: We are only interested in English speaking applicants.
-> Date input: We are only interested in applicants who can start witin the next 90 days.
-> Rest button: The simplicity of the solution, does not IMO warrant a reset button.
+- Password input: There is no indication of the applicant creating a profile.
+- Substantial dropdown: We are only interested in applicants living in Europe.
+- Language checkboxes: We are only interested in English speaking applicants.
+- Date input: We are only interested in applicants who can start witin the next 90 days.
+- Reset button: The simplicity of the solution, does not IMO warrant a reset button.
 
-Now that we've removed +50% of the UI, we still need to aid the applicant and gather relevant data in the form. Since our criteria set a hard cut off and for the sake of everyone, we should allude to these in the start and ensure that the applicant signs off, prior to submitting. By guiding the user, we will only need a failure feedback response, if the data doesn't make it through and the issue is of a technical nature.
+Now that we've removed +50% of the UI, we still need to aid the applicant and gather relevant data via the form. Since our criteria set a hard cut off and for the sake of everyone, we should allude to these in the start and ensure that the applicant signs off, prior to submitting.
 
 So the revised UI would consist of the following components: 
 
-> Card
-> Title
-> SubTitle
-> Paragraph
-> TextInput
-> Checkbox
-> Button
+- Card
+- Title
+- SubTitle
+- Paragraph
+- TextInput
+- Checkbox
+- Button
 
 ## Focus areas
 
