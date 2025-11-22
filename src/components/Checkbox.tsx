@@ -22,7 +22,7 @@ export default function Checkbox({
             onChange={onChange}
             className="w-8 h-8 "
         />
-        <span className="text-indigo-900">{label}</span>
+        <span className="text-slate-900">{label}</span>
     </label>
   );
 }

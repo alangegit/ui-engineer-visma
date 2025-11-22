@@ -16,14 +16,14 @@ export default function TextInput({
   onChange,
 }: TextInputProps) {
   return (
-    <label htmlFor={id} className="flex flex-col text-indigo-900">
+    <label htmlFor={id} className="flex flex-col text-slate-900">
       <span className="text-sm font-light lowercase pb-1">{label}</span>
       <input
         id={id}
         type="text"
         value={value}
         onChange={onChange}
-        className="border-2 rounded-md border-indigo-900 px-3 py-2 font-light"
+        className="border-b-2 border-slate-900 px-3 py-2 font-light bg-sky-100"
         placeholder={placeholder}
       />
     </label>

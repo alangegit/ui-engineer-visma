@@ -8,5 +8,5 @@ export default function Text({
   children
 }: TextProps) { 
 
-  return <p className="text-indigo-900">{children}</p>;
+  return <p className="text-slate-900">{children}</p>;
 }

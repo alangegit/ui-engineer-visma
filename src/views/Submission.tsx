@@ -12,15 +12,15 @@ export default function Submission() {
 
   return (
     <>
-      <section className="bg-indigo-950 min-h-screen p-20">
+      <section className="bg-slate-950 min-h-screen p-6 md:p-20">
         <div className="max-w-xl mx-auto">
-          <div className="grid gap-2 bg-indigo-100 border-b border-b-indigo-900 border-dashed p-8 rounded-t-md">
+          <div className="grid gap-2 bg-sky-100 border-b border-b-slate-900 border-dashed p-8 rounded-t-sm">
             <Title>Application form</Title>
             <Text>For English speaking applicants based in Europe</Text>
           </div>
           <form
             id="signup-form"
-            className=" bg-slate-100 rounded-b-md shadow-md p-8"
+            className=" bg-sky-50 rounded-b-sm shadow-md p-8"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               <TextInput
@@ -46,8 +46,8 @@ export default function Submission() {
               />
               <TextInput
                 id="profile"
-                label="url"
-                placeholder="linkedin profile"
+                label="profile"
+                placeholder="linkedin url"
                 value={profile}
                 onChange={(e) => setProfile(e.target.value)}
               />
