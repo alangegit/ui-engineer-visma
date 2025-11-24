@@ -1,4 +1,4 @@
-# Vite React Project - Senior UI Engineer Visma
+# Vite React Project - Senior UI Engineer
 
 This is a **React** application built with **Vite**, **TypeScript**, and **Tailwind CSS**
 
@@ -33,23 +33,23 @@ This means that we can be cheeky and discard the following elements:
 
 Now that we've removed a substantial part of the UI, we can build the solution and hopefully deliver it within the time limit.
 
-## Development Considerations
+## Dev/DX Considerations
 
 I decided to build the application with Vite as the CLI has support for React and the configuration is pretty straightforward when adding other packages. 
 
 I chose TypeScript because it provides a better developer experience, strong type safety, and it’s a familiar ecosystem for me in React projects.
 
-I chose TailwindCSS for speedy, utility-first styling, which allowed me to move quickly within the time constraint.
+I went with TailwindCSS for speedy, utility-first styling, which allowed me to move quickly within the time constraint.
 
 ## The Result
 
-After spending some 3.5 hours focused dev/design time on the task, I've created a handful of reusable components with very simple properties. These are found in the components folder and there's view in the views folder `Submission.tsx` that consumes all of them and is in turn displayed in the `App.tsx`.
+After spending ~3-4 hours focussed dev/design time on the task, I've created a handful of reusable components with very simple properties. These are found in the components folder and there's view in the views folder `Submission.tsx` that consumes all of them and is in turn consumed in `App.tsx`.
 
-The focus described in the original README.md was on component structure, scalability and developer experience, accessibility and usability and code quality. Which meant that I did not manage to create a fully working form within three hours. 
+With the main points described in the original README.md, I decided to focus on the components, structure, ui, etc. which means that the form is visible and clickable, but does not validate, nor send any data.
 
 ## Future Considerations
 
-If I had more time to finish the assignment I would:
+If I had more time to finish the task I would:
 
 - Improve input components with additional features such as autocomplete, validation messages and error handling
 - Add functionality so that tapping the submit button actually sends the data input in the form
@@ -57,4 +57,4 @@ If I had more time to finish the assignment I would:
 - Develop robust layout components with spacing patterns (grid gap controlled)
 - Split components into more meaningful folder structures (depending on responsibility)
 - Use semantic tokens (e.g., text-foreground, bg-surface, spacing-lg, etc.) to ensure consistent theming
-- Write more focused, descriptive commit messages to make the Git history more understandable
+- Write more focussed, descriptive commit messages to make the Git history more readable
