@@ -1,11 +1,9 @@
-import Application from "./view/Submission";
-
-import "./index.css";
+import Submission from "./views/Submission";
 
 export default function App() {
   return (
     <>
-      <Application />
+      <Submission />
     </>
   );
 }

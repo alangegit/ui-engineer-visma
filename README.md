@@ -1,48 +1,60 @@
-# Senior UI Engineer
+# Vite React Project - Senior UI Engineer Visma
 
-As a part of the recruitment process we ask you to complete a practical [...]
+This is a **React** application built with **Vite**, **TypeScript**, and **Tailwind CSS**
 
-## What's the task?
+## Getting Started
 
-Imagine that we're in a hiring process, and the applicant has to fill out [...]
+### 1. Install Requirements
+Make sure you have **Node.js (v18 or later)** installed
 
-### Considerations
+### 2. Install Dependencies
+From the project root, install all packages with `npm install`
 
-I used the vite CLI to build a react app with TypeScript and then installed TailwindCSS.
+### 3. Run Dev Server
+Start the local dev server with `npm run dev` and navigate to http://localhost:5173
 
-Comparing the provided solution to the task, my initial thought was to scope the task so that it was achievable within the time constraint, whilst still delivering a working solution.
+## UI/UX Considerations
 
-There's something off- with the provided solution. It's trying to do too much, without providing the right guidance. Why should a person sign up, if they don't meet the requirements? At what stage are we in, in the hiring process? Having just read Shape Up, I'm inspired by the idea of scoping ruthlessly create momentum. 
+The task is to develop a form that supports a hiring process.
 
-Some of the UI elements are irrelevant in the scenario of a finding an English speaking applicant who lives in Europe and can start within the next 90 days. For a more streamlined solution within scope, I would discard the following elements:
+There are three mandatory criteria: applicants must live in Europe, speak English, and be available within 90 days. Other than that we need a name, a way of establishing contact and also some way of understanding if they have the competencies we're after. 
 
-- Password input: Creating a profile isn't a core necessity for sending an application.
-- Substantial dropdown: We are only interested in applicants living in Europe.
-- Language checkboxes: We are only interested in English speaking applicants.
-- Date input: We are only interested in applicants who can start witin the next 90 days.
-- Reset button: The simplicity of the solution, does not IMO warrant a reset button.
+Comparing the provided html/js/css bundle to the task, my first thought was to scope hammer (inspired by Shape Up) the solution so that it lived up to the criteria and was somewhat achievable within the time constraint.
 
-+ Adding an input so that the application can as a minimum refer to a profile, such as linkedin
+This means that we can be cheeky and discard the following elements:
 
-Now that we've removed +50% of the UI, we still need to aid the applicant and gather relevant data via the form. Since the critera (Europe, English speaking, 90 days) sets a hard cut off and for the sake of everyone, we could instead allude to these in the start and ensure that the applicant signs off, prior to submitting. That way nobody wastes their time.
+- Password input: Creating a profile isn't strictly a necessity for sending an application
+- Country dropdown: We are only interested in applicants living in Europe
+- Language checkboxes: We are only interested in English speaking applicants
+- Date input: We are only interested in applicants who can start within the next 90 days
+- Reset button: The simplicity of the solution does not really warrant a reset button
 
-## Focus areas
++ Adding an input so that the applicant can link to a professional website/profile is important
 
-As we're looking for someone to work in a design system team, your core focus [...]
+Now that we've removed a substantial part of the UI, we can build the solution and hopefully deliver it within the time limit.
 
-## Expectations
+## Development Considerations
 
-We expect you to use no more than three hours on this task [...]
+I decided to build the application with Vite as the CLI has support for React and the configuration is pretty straightforward when adding other packages. 
 
-### Considerations
+I chose TypeScript because it provides a better developer experience, strong type safety, and it’s a familiar ecosystem for me in React projects.
 
-If I had 2x the time to finish this assignment I would:
+I chose TailwindCSS for speedy, utility-first styling, which allowed me to move quickly within the time constraint.
 
-- Split components into more meaningful folder structures (depending on the amount, split into meaningful folders)
+## The Result
+
+After spending some 3.5 hours focused dev/design time on the task, I've created a handful of reusable components with very simple properties. These are found in the components folder and there's view in the views folder `Submission.tsx` that consumes all of them and is in turn displayed in the `App.tsx`.
+
+The focus described in the original README.md was on component structure, scalability and developer experience, accessibility and usability and code quality. Which meant that I did not manage to create a fully working form within three hours. 
+
+## Future Considerations
+
+If I had more time to finish the assignment I would:
+
+- Improve input components with additional features such as autocomplete, validation messages and error handling
+- Add functionality so that tapping the submit button actually sends the data input in the form
+- Spend more time tweaking the design and to aid the user (loading component, better focus/interaction states, etc.)
 - Develop robust layout components with spacing patterns (grid gap controlled)
-- Ensure better responsive design (mobile experience, full button)
-- Work with semantic colours from a unified source (text-foreground, e.g.)
-- Enhance components by developing helpful functionality (autocomplete, error handling, feedback)
-- Spend more time tweaking the design and to aid the user (spinners, better focus states, etc.)
-- Add variants to some components to handle different use cases (.e.g input validation messages)
-- Rework copy to better suit the audience 
+- Split components into more meaningful folder structures (depending on responsibility)
+- Use semantic tokens (e.g., text-foreground, bg-surface, spacing-lg, etc.) to ensure consistent theming
+- Write more focused, descriptive commit messages to make the Git history more understandable

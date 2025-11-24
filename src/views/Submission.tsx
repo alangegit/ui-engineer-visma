@@ -3,27 +3,31 @@ import { useState } from "react";
 import { Button, Title, Text, TextInput, Checkbox } from "../components";
 
 export default function Submission() {
-  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [profile, setProfile] = useState("");
+  const [url, setUrl] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false);
+
+  const isFormValid =
+    firstName.trim() &&
+    lastName.trim() &&
+    email.trim() &&
+    url.trim() &&
+    acceptTerms;
 
   return (
     <>
-      <section className="bg-slate-950 min-h-screen p-6 md:p-20">
+      <section className="min-h-screen bg-slate-950 p-6 md:p-20">
         <div className="max-w-xl mx-auto">
-          <div className="grid gap-2 bg-sky-100 border-b border-b-slate-900 border-dashed p-8 rounded-t-sm">
+          <div className="grid gap-2 bg-sky-100 border-b border-b-slate-900 border-dashed p-8">
             <Title>Application form</Title>
             <Text>For English speaking applicants based in Europe</Text>
           </div>
-          <form
-            id="signup-form"
-            className=" bg-sky-50 rounded-b-sm shadow-md p-8"
-          >
+          <form id="signup-form" className=" bg-sky-50 p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               <TextInput
+                type="text"
                 id="first-name"
                 label="Name"
                 placeholder="first name"
@@ -31,6 +35,7 @@ export default function Submission() {
                 onChange={(e) => setFirstName(e.target.value)}
               />
               <TextInput
+                type="text"
                 id="last-name"
                 label="Surname"
                 placeholder="last name"
@@ -38,6 +43,7 @@ export default function Submission() {
                 onChange={(e) => setLastName(e.target.value)}
               />
               <TextInput
+                type="email"
                 id="email"
                 label="Email"
                 placeholder="email address"
@@ -45,22 +51,23 @@ export default function Submission() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <TextInput
-                id="profile"
-                label="profile"
+                type="url"
+                id="url"
+                label="url"
                 placeholder="linkedin url"
-                value={profile}
-                onChange={(e) => setProfile(e.target.value)}
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
               />
             </div>
             <div className="mb-12">
               <Checkbox
                 id="acceptTerms"
-                label="By submitting this application you acknowledge that you are based in Europe, fluent in English and available to start within 90 days"
+                label="By applying, you confirm you’re based in Europe, fluent in English, and able to start within 90 days."
                 checked={acceptTerms}
                 onChange={(e) => setAcceptTerms(e.target.checked)}
               />
             </div>
-            <Button type="submit" disabled>
+            <Button type="submit" disabled={!isFormValid}>
               Submit application
             </Button>
           </form>
