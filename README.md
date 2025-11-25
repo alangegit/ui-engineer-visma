@@ -19,9 +19,9 @@ The task is to develop a form that supports a hiring process.
 
 There are three mandatory criteria: applicants must live in Europe, speak English, and be available within 90 days. Other than that we need a name, a way of establishing contact and also some way of understanding if they have the competencies we're after. 
 
-Comparing the provided html/js/css bundle to the task, my first thought was to scope hammer (inspired by Shape Up) the solution so that it lived up to the criteria and was somewhat achievable within the time constraint.
+Comparing the provided html/js/css bundle to the task, my first thought was to scope hammer the solution (inspired by Shape Up) so that it lived up to the criteria and was somewhat achievable within the time constraint.
 
-This means that we can be cheeky and discard the following elements:
+This means that I've been cheeky and discarded the following elements:
 
 - Password input: Creating a profile isn't strictly a necessity for sending an application
 - Country dropdown: We are only interested in applicants living in Europe
@@ -29,9 +29,11 @@ This means that we can be cheeky and discard the following elements:
 - Date input: We are only interested in applicants who can start within the next 90 days
 - Reset button: The simplicity of the solution does not really warrant a reset button
 
-+ Adding an input so that the applicant can link to a professional website/profile is important
+But I also needed to add one UI element for the solution to be useful:
 
-Now that we've removed a substantial part of the UI, we can build the solution and hopefully deliver it within the time limit.
++ A URL input: So that the applicant can link to a professional website/profile
+
+After cleaning up the UI, I hoped to build the solution within the time limit.
 
 ## Dev/DX Considerations
 
@@ -43,18 +45,19 @@ I went with TailwindCSS for speedy, utility-first styling, which allowed me to m
 
 ## The Result
 
-After spending ~3-4 hours focussed dev/design time on the task, I've created a handful of reusable components with very simple properties. These are found in the components folder and there's view in the views folder `Submission.tsx` that consumes all of them and is in turn consumed in `App.tsx`.
+After spending ~3-4 hours focussed dev/design time on the task, I've created a handful of reusable components with very simple properties. These are found in the components folder and there's a view in the views folder `Submission.tsx` that consumes all of them and is in turn consumed in `App.tsx`.
 
-With the main points described in the original README.md, I decided to focus on the components, structure, ui, etc. which means that the form is visible and clickable, but does not validate, nor send any data.
+With the main points described in the original README.md, my time was spent on components, structure, ui, etc. which means that the form is visible and clickable, but does not validate, nor send any data.
 
 ## Future Considerations
 
 If I had more time to finish the task I would:
 
-- Improve input components with additional features such as autocomplete, validation messages and error handling
-- Add functionality so that tapping the submit button actually sends the data input in the form
-- Spend more time tweaking the design and to aid the user (loading component, better focus/interaction states, etc.)
-- Develop robust layout components with spacing patterns (grid gap controlled)
-- Split components into more meaningful folder structures (depending on responsibility)
-- Use semantic tokens (e.g., text-foreground, bg-surface, spacing-lg, etc.) to ensure consistent theming
-- Write more focussed, descriptive commit messages to make the Git history more readable
+- Improve input components with autocomplete, validation messages and error handling
+- Spend more time tweaking the UI to provide better feedback to the user
+- Develop robust layout components with spacing patterns 
+- Split components into more meaningful folder structures depending on responsibility
+- Use semantic tokens (text-foreground, bg-surface, spacing-lg, etc.) for theming
+- Add functionality so that tapping the submit button actually sends the data
+- Evaluate and tweak any redundant functional code so that it is more readable
+- Write more focussed, descriptive commit messages for a better git history
